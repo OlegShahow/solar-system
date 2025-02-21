@@ -1,0 +1,1592 @@
+@import "null.scss";
+
+// подключать только если есть в этих файлах данные. пустыми не подключать !!
+// @import "var.scss";
+@import "basestyle.scss";
+
+@function toRem($value) {
+	$baseFontSize: 16;
+	@return ($value/$baseFontSize) * 1rem;
+}
+
+//.......................................................................................
+
+$maxWidth: 1920;
+
+@mixin adaptiveValue($property, $pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+
+	@media (min-width: toRem(1920)) {
+		#{$property}: #{$pcSize + px};
+	}
+
+	@media (max-width: toRem(1920)) {
+		@media (max-width: 1920px) {
+			#{$property}: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 767px) / #{$maxWidth}));
+		}
+	}
+}
+// @include adaptiveValue ($property , $pcSize, $mobSize);
+
+//.................................   base   style ......................................................
+
+[class*="__container"] {
+	max-width: 1680px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+html {
+	scroll-behavior: smooth;
+}
+.wraper {
+	// position: relative;
+	overflow: hidden;
+}
+.sound {
+	position: fixed;
+	top: toRem(100);
+	left: toRem(-50);
+	display: flex;
+	// background-color: #ffd90075;
+	border-radius: toRem(10);
+	transform: rotate(90deg);
+	cursor: pointer;
+	& img {
+		width: toRem(50);
+		margin-right: toRem(20);
+		transform: rotate(-90deg);
+		cursor: pointer;
+	}
+
+	& input {
+		cursor: pointer;
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out; /* Плавное изменение opacity */
+	}
+}
+/* Когда изображение получает фокус, меняем opacity на 1 */
+.sound:hover input {
+	opacity: 1;
+}
+// *********************************************************************************************************
+.sidenav {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	// align-items: flex-end;
+	row-gap: toRem(6);
+	top: toRem(250);
+	// left: toRem(100);
+	// border: 1px solid white;
+	& a {
+		position: relative;
+		text-align: center;
+		top: 0;
+		font-size: toRem(20);
+		width: toRem(150);
+		padding: toRem(10);
+		// padding-right: toRem(20);
+		align-self: flex-end;
+		left: toRem(-120);
+		color: white;
+		transition: 0.6s;
+		border: 1px solid white;
+		cursor: pointer;
+	}
+	& a:hover {
+		left: 0;
+		transform: scale(1.3);
+	}
+}
+
+#sys {
+	background-color: black;
+}
+#sol {
+	background-color: goldenrod;
+	border: none;
+	color: black;
+}
+#merc {
+	background-color: #c0c0c0;
+	color: black;
+	border: none;
+}
+
+#ven {
+	background-color: #8b4513;
+	border: none;
+}
+
+#ea {
+	background-color: #3434ed;
+	border: none;
+}
+
+#mar {
+	background-color: #dc143c;
+	border: none;
+}
+#ju {
+	background-color: rgb(139, 69, 19);
+	border: none;
+}
+#sat {
+	background-color: #434305;
+	border: none;
+}
+#ur {
+	background-color: #ffdead;
+	border: none;
+}
+
+#nep {
+	background-color: #3c597e;
+	border: none;
+}
+
+// *******************************************************************************************************************88
+.title {
+	text-align: center;
+	& h2 {
+		font-size: toRem(50);
+		font-family: "Alegreya SC", serif;
+		font-weight: bold;
+		color: transparent;
+		letter-spacing: 1px;
+		// color: white;
+		text-shadow:
+			0px 0px 1px rgb(65, 63, 63),
+			-2px -2px 1px rgb(247, 243, 243);
+	}
+
+	& span {
+		color: white;
+		font-size: toRem(40);
+		font-family: "SfAltoutlineItalic";
+		text-shadow: none;
+	}
+}
+
+.slidertitle {
+}
+.btn {
+	display: inline-block;
+	margin-top: toRem(30);
+	& button {
+		background-color: rgba(255, 255, 255, 0);
+		padding: toRem(10);
+		box-shadow: 0px 0px 16px white;
+		font-size: toRem(20);
+		border-radius: 5px;
+		color: white;
+	}
+}
+
+h3 {
+	font-size: toRem(40);
+	font-family: "Alegreya SC", serif;
+}
+.sltext {
+	position: relative;
+	width: 100%;
+	height: toRem(200);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+	& div {
+		padding: toRem(10);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		& p {
+			font-size: toRem(30);
+		}
+	}
+}
+
+.planetblock {
+	margin-top: toRem(50);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.planettext {
+	font-size: toRem(30);
+	padding: toRem(20);
+	text-align: center;
+}
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.solar {
+	&__system {
+		background-image: url(../img/ss4.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		padding: toRem(100) 0;
+		// padding-bottom: toRem(100);
+	}
+	&__system--title {
+		& h2 {
+			color: gold;
+			text-shadow: -2px -2px 3px red;
+		}
+	}
+	&__system--text {
+		margin-top: toRem(400);
+
+		& p {
+			font-family: "Alegreya SC", serif;
+			color: white;
+			font-size: toRem(30);
+			margin-top: toRem(30);
+			line-height: 1.5;
+			letter-spacing: 1px;
+			text-shadow:
+				1px 1px 6px black,
+				-1px -1px 6px black,
+				3px 3px 6px black,
+				-3px -3px 6px black;
+		}
+
+		& p::first-letter {
+			font-size: toRem(50);
+			font-weight: bold;
+			color: #ffd700;
+			font-family: "Kelly Slab", serif;
+		}
+	}
+}
+
+// ===============================    star    ====================================================================
+
+.star {
+	&__body {
+		background-image: url(../img/solarfone.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		padding: toRem(100) 0;
+	}
+
+	&__title {
+		& h2 {
+			color: #ffd90097;
+			text-shadow:
+				0px 0px 1px rgb(65, 63, 63),
+				2px -2px 1px rgb(247, 243, 243);
+		}
+	}
+	&__block {
+		display: flex;
+		margin-top: toRem(50);
+		// border: 1px solid white;
+	}
+	&__block--photo {
+		& img {
+			// width: 120%;
+			border-radius: 50%;
+			// background-color: gold;
+
+			animation: sol 20s infinite;
+
+			@keyframes sol {
+				0% {
+					filter: brightness(0.8); /* Обычное состояние */
+				}
+				50% {
+					filter: brightness(1.3) drop-shadow(100px 100px 100px #ffd90061)
+						drop-shadow(100px -100px 100px #ffd90064) drop-shadow(-100px 100px 100px #ffd9005d)
+						drop-shadow(-100px -100px 100px #ffd9005f); /* Два эффекта тени */
+				}
+				100% {
+					filter: brightness(0.8); /* Возвращается в норму */
+				}
+			}
+		}
+	}
+	&__block--text {
+		text-align: center;
+		padding: toRem(20);
+		backdrop-filter: blur(3px); /* Размытие фона */
+		// border: 1px solid white;
+
+		& p {
+			font-size: toRem(34);
+			margin-bottom: toRem(30);
+			color: #f5ebae;
+			letter-spacing: 2px;
+			line-height: 1.3;
+			text-shadow:
+				1px 1px 6px black,
+				-1px -1px 6px black,
+				3px 3px 6px black,
+				-3px -3px 6px black;
+		}
+		& p:first-of-type u {
+			text-decoration: underline;
+		}
+	}
+	&__slider {
+		margin-top: toRem(50);
+		text-align: center;
+		// border: 1px solid white;
+	}
+	&__slider--title {
+		margin-bottom: toRem(20);
+		// border: 1px solid white;
+		& h3 {
+			color: #f7e789;
+		}
+	}
+	&__slider--body {
+		position: relative;
+		// ниже дисплей для текста по факты
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: toRem(200);
+		// overflow-x: hidden;
+		// border: 1px solid white;
+
+		& h3 {
+			color: #f7e789;
+		}
+
+		& p {
+			color: #f7e789;
+			letter-spacing: 2px;
+		}
+
+		& div {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0; /* ТОП - 0 !!!!  НЕ -100 - ТАК КАК ЭТО ПОВОРОТ С ПРИВЯЗКОЙ А НЕ "ВЫЕЗЖАЕТ"   НЕ ПУТАТЬ !!!!!!!*/
+			padding: toRem(10);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform-origin: top center; /* привязка блоков к верху для листания*/
+			transform: rotateX(90deg); /* для переворота*/
+			background-color: black;
+			transition: transform 1s ease; /* Плавная анимация */
+			// border: 1px solid white;
+		}
+	}
+	&__slider--button {
+		margin-top: toRem(20);
+
+		& button {
+			color: #f7e789;
+		}
+	}
+}
+
+.all__planet {
+	margin-top: toRem(200);
+
+	& h2 {
+		color: white;
+		font-size: toRem(40);
+	}
+
+	& button {
+		font-size: toRem(20);
+		padding: toRem(10);
+		margin-top: toRem(20);
+		border-radius: toRem(10);
+		color: white;
+		background-color: rgba(255, 255, 255, 0.126);
+		clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
+	}
+}
+
+// ***************************************************************************************************
+.up__figure {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: 0;
+	// background-color: red;
+	background-image: url(../img/san.webp);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	clip-path: polygon(0% 0.1%, 100% 0.1%, 50% 50.1%, 50% 50.1%);
+	transition: 1s ease;
+	z-index: 5000;
+}
+
+.right__figure {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: -100%;
+	// background-color: red;
+	background-image: url(../img/san.webp);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 50% 50%);
+	transition: 1s ease;
+	z-index: 5000;
+}
+
+.down__figure {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	bottom: -100%;
+	left: 0;
+	// background-color: red;
+	background-image: url(../img/san.webp);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	clip-path: polygon(50% 49.9%, 50% 49.9%, 100% 99.9%, 0% 99.9%);
+	transition: 1s ease;
+	z-index: 5000;
+}
+
+.left__figure {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -100%;
+	// background-color: red;
+	background-image: url(../img/san.webp);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	clip-path: polygon(0% 0%, 50% 50%, 50% 50%, 0% 100%);
+	transition: 1s ease;
+	z-index: 5000;
+}
+
+// ***************************************************************************************************
+
+// =================================     .mercury    ================================================================
+
+.mercury {
+	&__body {
+		background-image: url(../img/mercuryfone.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		padding: toRem(100) 0;
+	}
+
+	&__block--photo {
+		width: toRem(300);
+		& img {
+			width: 100%;
+			animation: mercury 20s infinite;
+
+			@keyframes mercury {
+				0% {
+					transform: scale(1);
+					opacity: 0.6;
+				}
+				50% {
+					transform: scale(1.5);
+					opacity: 1;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+	&__block--text {
+		& p {
+			color: #c0c0c0;
+			margin-bottom: toRem(30);
+		}
+
+		& p:first-of-type u {
+			text-decoration: underline;
+		}
+	}
+	&__slider {
+		// border: 1px solid white;
+		width: 100%;
+		text-align: center;
+	}
+	&__slider--body {
+		position: relative;
+		// ниже дисплей для текста по факты
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: toRem(200);
+		// border: 1px solid white;
+
+		& div {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: toRem(20);
+			top: 0; /* ТОП - 0 !!!!  НЕ -100 - ТАК КАК ЭТО ПОВОРОТ С ПРИВЯЗКОЙ А НЕ "ВЫЕЗЖАЕТ"   НЕ ПУТАТЬ !!!!!!!*/
+			transform-origin: top center; /* привязка блоков к верху для листания*/
+			transform: rotateX(90deg); /* для переворота*/
+			background-color: black;
+			transition: transform 1s ease; /* Плавная анимация */
+		}
+
+		& h3 {
+			color: #c0c0c0;
+		}
+
+		& p {
+			color: #c0c0c0;
+		}
+	}
+	&__slider--button {
+		& button {
+			color: #c0c0c0;
+		}
+	}
+}
+
+// ========================================   venus   ======================================================================
+
+.venus {
+	&__body {
+		background-image: url(../img/venusfone.webp);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		padding: toRem(100) 0;
+	}
+
+	&__title {
+		& h2 {
+			color: #8b4513;
+			text-shadow:
+				0px 1px 1px rgb(3, 3, 3),
+				2px -2px 1px #ffa500;
+		}
+	}
+
+	&__block--photo {
+		& img {
+			width: toRem(400);
+			// opacity: 0.6;
+
+			animation: ven 10s infinite;
+
+			@keyframes ven {
+				0% {
+					opacity: 0.6;
+					transform: scale(1);
+				}
+				50% {
+					opacity: 1;
+					transform: scale(1.01);
+				}
+				100% {
+					opacity: 0.6;
+					transform: scale(1);
+				}
+			}
+		}
+	}
+	&__block--text {
+		// border: 1px solid white;
+		& p {
+			color: white;
+			margin-bottom: toRem(30);
+			text-shadow:
+				0px 0px 1px #8b4513,
+				4px 4px 10px #8b4513,
+				-4px -4px 10px #8b4513;
+		}
+	}
+	&__slider {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__slider--body {
+		// border: 1px solid white;
+		position: relative;
+		width: 100%;
+		height: toRem(200);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		& h3 {
+			color: #8b4513;
+			text-shadow: 0px 0px 1px white;
+		}
+
+		& div {
+			position: absolute;
+			top: 0;
+			left: -100%;
+			padding: toRem(20);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.146);
+			backdrop-filter: blur(7px); /* Размытие фона */
+			// background-color: black;
+			transition: left 2s ease; /* Плавная анимация для свойства left */
+			p {
+				color: #de6a18;
+				text-shadow: 0px 0px 1px rgb(250, 248, 248);
+			}
+		}
+	}
+}
+
+/* Класс для видимости слайда */
+.show-slide {
+	left: 0 !important; /* Когда слайд должен появиться */
+}
+
+.hide-slide {
+	left: -100% !important; /* Когда слайд должен скрыться */
+}
+
+// ====================================    earth     ==========================================================================
+
+.earth {
+	&__body {
+		background-image: url(../img/Earthfone.webp);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: toRem(100) 0;
+	}
+
+	&__title {
+		& h2 {
+			color: #3434ed;
+			text-shadow:
+				0px 1px 1px rgb(3, 3, 3),
+				2px -2px 1px #ffa500;
+		}
+	}
+	&__block {
+		position: relative;
+	}
+
+	&__block--text {
+		& p {
+			color: #00bfff;
+			margin-bottom: toRem(50);
+			text-shadow:
+				1px 1px 6px #3434ed,
+				-1px -1px 6px#3434ed;
+		}
+	}
+	&__slider {
+		width: 100%;
+		height: toRem(200);
+		text-align: center;
+		margin-bottom: toRem(100);
+		// border: 1px solid white;
+	}
+	&__slider--body {
+		position: relative;
+		& h3 {
+			color: #00bfff;
+		}
+		& p {
+			color: #00bfff;
+		}
+
+		& div {
+			text-align: center;
+			color: #00bfff;
+			width: 100%;
+			height: 100%;
+			padding: 0 toRem(20);
+			background-color: rgb(22, 3, 60);
+			transform: scale(0);
+			opacity: 0;
+			transition: 1s ease-in;
+		}
+	}
+}
+
+.main-image {
+	width: toRem(300);
+
+	animation: rotateEarth 10s infinite linear;
+
+	@keyframes rotateEarth {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.05);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+}
+.moon-image {
+	width: toRem(50);
+	position: absolute;
+	top: 43%;
+	left: 25%;
+	width: 50px;
+	height: 50px;
+	// transform-origin: ноль - будет вращение относительно своего центра
+	transform-origin: -220px; /*вторая картинка  position: absolute; от родителя .transform-origin: - сколько отступирь от центра вращения при анимации*/
+	animation: rotateMoon 60s infinite linear;
+
+	@keyframes rotateMoon {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+// ==============================================  mars   ===================================================================
+
+.mars {
+	&__body {
+		background-image: url(../img/marsfone2.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: toRem(100) 0;
+	}
+
+	&__title {
+		& h2 {
+			color: #dc143c;
+		}
+	}
+
+	&__block--photo {
+		& img {
+			width: toRem(350);
+		}
+	}
+	&__block--text {
+		// border: 1px solid white;
+		& p {
+			font-size: toRem(34);
+			color: #dc143c;
+			text-shadow:
+				0px 0px 1px white,
+				2px 2px 3px black,
+				-2px -2px 3px black,
+				4px 4px 3px black,
+				-4px -4px 3px black;
+			letter-spacing: 2px;
+			margin-bottom: toRem(40);
+		}
+	}
+	&__slider {
+		text-align: center;
+	}
+	&__slider--body {
+		// border: 1px solid white;
+		& p {
+			color: white;
+		}
+		& h3 {
+			color: #dc143c;
+		}
+
+		& div {
+			position: absolute;
+			top: toRem(-100);
+			text-align: center;
+			padding: 0 toRem(30);
+			transform: rotate(-90deg);
+			transform-origin: left center; /* привязка блоков к верху для листания*/
+			transition: transform 1s ease; /* Плавная анимация */
+			// background-color: #dc143c;
+			backdrop-filter: blur(16px); /* Размытие фона */
+			border: 1px solid #dc143c;
+		}
+	}
+}
+
+.mars__sputnik {
+	position: absolute;
+	// margin-top: toRem(700);
+	// margin-left: toRem(200);
+	width: toRem(40);
+
+	animation: sput 30s infinite;
+
+	@keyframes sput {
+		0% {
+			margin-top: toRem(700);
+			margin-left: 0;
+			opacity: 0;
+		}
+
+		10% {
+			opacity: 1;
+		}
+
+		95% {
+			opacity: 1;
+		}
+		100% {
+			margin-top: toRem(300);
+			margin-left: 90%;
+			opacity: 0;
+		}
+	}
+
+	& img {
+		width: 100%;
+	}
+}
+
+// =====================================    jupiter    ========================================================================
+
+.kallisto {
+	width: toRem(60);
+	position: absolute;
+
+	animation: kal 90s infinite;
+
+	@keyframes kal {
+		0% {
+			top: 10%;
+			right: 20%;
+			opacity: 0;
+			transform: scale(1);
+		}
+
+		50% {
+			transform: scale(0.7);
+			opacity: 1;
+		}
+
+		70% {
+			top: 50%;
+			right: 85%;
+			opacity: 1;
+			transform: scale(0.4);
+		}
+		100% {
+			top: 60%;
+			right: 77%;
+			opacity: 0;
+			transform: scale(0);
+		}
+	}
+}
+
+.europa {
+	width: toRem(70);
+	position: absolute;
+
+	animation: eur 130s infinite;
+
+	@keyframes eur {
+		0% {
+			top: 30%;
+			right: 10%;
+			opacity: 0;
+			transform: scale(1);
+		}
+
+		50% {
+			transform: scale(0.7);
+			opacity: 1;
+		}
+
+		70% {
+			top: 60%;
+			right: 85%;
+			opacity: 1;
+			transform: scale(0.4);
+		}
+		100% {
+			top: 70%;
+			right: 77%;
+			opacity: 0;
+			transform: scale(0);
+		}
+	}
+}
+.io {
+	width: toRem(35);
+	position: absolute;
+
+	animation: io 60s infinite;
+
+	@keyframes io {
+		0% {
+			top: 50%;
+			right: 10%;
+			opacity: 0;
+			transform: scale(1);
+		}
+
+		50% {
+			transform: scale(0.7);
+			opacity: 1;
+		}
+
+		70% {
+			top: 40%;
+			right: 85%;
+			opacity: 1;
+			transform: scale(0.4);
+		}
+		100% {
+			top: 35%;
+			right: 77%;
+			opacity: 0;
+			transform: scale(0);
+		}
+	}
+}
+.ji {
+	position: relative;
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	margin-left: 5%;
+
+	// border: 1px solid white;
+	& img {
+		width: 60%;
+		// margin-left: 40%;
+	}
+}
+
+.jupiter {
+	&__body {
+		background-image: url(../img/jfone.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: toRem(100) toRem(40);
+		// height: 100vh;
+	}
+	&__container {
+		position: relative;
+		margin-top: -55%;
+		// border: 1px solid white;
+	}
+	&__title {
+		& h2 {
+			color: rgb(139, 69, 19);
+		}
+	}
+	&__block {
+	}
+	&__block--photo {
+	}
+	&__block--text {
+		& p {
+			color: white;
+			text-shadow:
+				0px 0px 1px black,
+				2px 2px 10px rgb(139, 69, 19),
+				-2px -2px 10px rgb(139, 69, 19),
+				4px 4px 10px rgb(7, 7, 7),
+				-4px -4px 10px rgb(9, 9, 9);
+			padding-bottom: toRem(30);
+			font-size: toRem(34);
+			letter-spacing: 2px;
+			font-weight: 900;
+		}
+	}
+	&__slider {
+		text-align: center;
+	}
+	&__slider--body {
+		margin-top: toRem(100);
+		height: toRem(200);
+		// border: 1px solid white;
+
+		& div {
+			opacity: 0;
+			background-color: black;
+			border: 1px dashed rgb(139, 69, 19);
+
+			transition: 1s ease-in-out;
+
+			& p {
+				color: white;
+				font-size: toRem(34);
+				text-shadow:
+					0px 0px 1px black,
+					2px 2px 10px rgb(139, 69, 19),
+					-2px -2px 10px rgb(139, 69, 19),
+					4px 4px 10px rgb(7, 7, 7),
+					-4px -4px 10px rgb(9, 9, 9);
+				letter-spacing: 2px;
+			}
+		}
+
+		& h3 {
+			color: rgb(139, 69, 19);
+			font-weight: 600;
+			text-shadow: 0px 0px 1px white;
+		}
+	}
+}
+
+// ===================================   saturn    ==========================================================================
+
+.vs,
+.vs2,
+.vs3,
+.vs4,
+.vs5,
+.vs6,
+.vs7,
+.vs8,
+.vs9,
+.vs10,
+.vs11,
+.vs12,
+.vs13,
+.vs14,
+.vs15,
+.vs16,
+.vs17,
+.vs18 {
+	position: absolute;
+	width: toRem(40);
+}
+
+.vs {
+	top: 0;
+	left: 0;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 2s; /* пауза перед повтором */
+}
+.vs2 {
+	top: 10%;
+	left: 90%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 4s; /* пауза перед повтором */
+}
+.vs3 {
+	top: 16%;
+	left: 50%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 8s; /* пауза перед повтором */
+}
+.vs4 {
+	top: 50%;
+	left: 80%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 1s; /* пауза перед повтором */
+}
+.vs5 {
+	top: 40%;
+	left: 22%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 6s; /* пауза перед повтором */
+}
+.vs6 {
+	top: 70%;
+	left: 50%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 8s; /* пауза перед повтором */
+}
+.vs7 {
+	top: 50%;
+	left: 30%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 5s; /* пауза перед повтором */
+}
+.vs8 {
+	top: 90%;
+	left: 30%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 1s; /* пауза перед повтором */
+}
+.vs9 {
+	top: 100%;
+	left: 80%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 5s; /* пауза перед повтором */
+}
+.vs10 {
+	top: 30%;
+	left: 75%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 2s; /* пауза перед повтором */
+}
+.vs11 {
+	top: 65%;
+	left: 38%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 3s; /* пауза перед повтором */
+}
+.vs12 {
+	top: 27%;
+	left: 61;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 2s; /* пауза перед повтором */
+}
+.vs13 {
+	top: 83%;
+	left: 75%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 9s; /* пауза перед повтором */
+}
+.vs14 {
+	top: 55%;
+	left: 45%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 8s; /* пауза перед повтором */
+}
+.vs15 {
+	top: 31%;
+	left: 28%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 6s; /* пауза перед повтором */
+}
+.vs16 {
+	top: 95%;
+	left: 52%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 5s; /* пауза перед повтором */
+}
+.vs17 {
+	top: 13%;
+	left: 29%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 4s; /* пауза перед повтором */
+}
+.vs18 {
+	top: 64%;
+	left: 89%;
+	animation: blick 10s infinite ease-in-out;
+	animation-delay: 2s; /* пауза перед повтором */
+}
+
+@keyframes blick {
+	0% {
+		transform: scale(0.5);
+	}
+	1% {
+		transform: scale(5);
+	}
+	2% {
+		transform: scale(0.5);
+	}
+	100% {
+		transform: scale(0.5);
+	}
+}
+
+.saturn {
+	&__body {
+		background-color: black;
+		width: 100%;
+		height: 100%;
+		padding: toRem(100) 0;
+	}
+	&__container {
+		position: relative;
+	}
+	&__title {
+		& h2 {
+			color: #434305;
+		}
+	}
+	&__block {
+		position: relative;
+		// border: 1px solid white;
+		flex-direction: column;
+	}
+	&__block--photo {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		animation: sat 120s infinite;
+
+		@keyframes sat {
+			0% {
+				left: 0;
+			}
+			50% {
+				left: 40%;
+			}
+			100% {
+				left: 0;
+			}
+		}
+
+		& img {
+			animation: satimg 120s infinite;
+
+			@keyframes satimg {
+				0% {
+					transform: rotate(0);
+				}
+				50% {
+					transform: rotate(-30deg);
+				}
+				100% {
+					transform: rotate(0);
+				}
+			}
+		}
+		// border: 1px solid white;
+	}
+	&__block--text {
+		margin-top: toRem(450);
+		// border: 1px solid white;
+
+		& p {
+			margin-bottom: toRem(30);
+			color: #dcdcdc;
+			text-shadow: 1px 1px 6px #434305;
+			font-size: toRem(34);
+			letter-spacing: 2px;
+		}
+	}
+	&__slider {
+		width: 100%;
+		margin-top: toRem(50);
+		text-align: center;
+		// border: 1px solid white;
+	}
+	&__slider--body {
+		width: 100%;
+		height: toRem(200);
+		// border: 1px solid white;
+
+
+		& h3{
+			color: #dcdcdc;
+		}
+
+		& div {
+			background-color: black;
+			border: 1px dashed white;
+			opacity: 0;
+			transform: scale(2);
+			transition: 1s ease-in-out;
+
+			& p {
+				color: #dcdcdc;
+				font-size: toRem(34);
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
+
+// ======================================  uran    =============================================================================
+
+.uran__meteor {
+	position: absolute;
+	top: 0;
+	right: -10%;
+	width: toRem(50);
+
+	animation: met 20s ease-in-out infinite;
+
+	@keyframes met {
+		0% {
+			opacity: 0;
+			transform: rotate(0deg) scale(0);
+			right: toRem(-50);
+		}
+		30% {
+			opacity: 1;
+		}
+
+		100% {
+			transform: rotate(720deg) scale(5);
+			opacity: 1;
+			top: 70%;
+			right: 130%;
+		}
+	}
+}
+.uran__meteor2 {
+	position: absolute;
+	// top: 0;
+	// left: -40%;
+	width: toRem(50);
+
+	animation: met2 30s ease-in-out infinite;
+
+	@keyframes met2 {
+		0% {
+			opacity: 0;
+			transform: rotate(0deg) scale(20);
+			top: -30%;
+			left: -40%;
+		}
+		10% {
+			opacity: 1;
+		}
+
+		50% {
+			transform: rotate(720deg) scale(0);
+			opacity: 1;
+			top: 60%;
+			left: 100%;
+		}
+		100% {
+			transform: rotate(720deg) scale(0);
+			opacity: 0;
+		}
+	}
+}
+.uran__meteor3 {
+	position: absolute;
+	width: toRem(10);
+
+	animation: met3 33s ease-in-out infinite;
+
+	@keyframes met3 {
+		0% {
+			opacity: 0;
+			transform: rotate(0deg) scale(20);
+			top: -40%;
+			left: -100%;
+		}
+		10% {
+			opacity: 1;
+		}
+
+		50% {
+			transform: rotate(720deg) scale(0);
+			opacity: 1;
+			top: 130%;
+			left: 100%;
+		}
+		100% {
+			transform: rotate(720deg) scale(0);
+			opacity: 0;
+		}
+	}
+}
+
+.uran {
+	&__body {
+		background-image: url(../img/uranfone.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		padding: toRem(100) 0;
+		overflow: hidden;
+	}
+	&__container {
+		position: relative;
+	}
+	&__title {
+		& h2 {
+			color: #ffdead;
+			text-shadow:
+				0px 1px 1px rgb(3, 3, 3),
+				2px -2px 1px #ffa500;
+		}
+	}
+	&__block {
+	}
+	&__block--photo {
+		& img {
+			width: toRem(500);
+		}
+	}
+	&__block--text {
+		backdrop-filter: blur(3px); /* Размытие фона */
+
+		& p {
+			color: #ffdead;
+			font-size: toRem(34);
+			margin-bottom: toRem(30);
+			letter-spacing: 2px;
+			text-shadow:
+				1px 1px 1px black,
+				-1px -1px 1px black;
+		}
+	}
+	&__slider {
+		text-align: center;
+		margin-top: toRem(50);
+	}
+	&__slider--body {
+		backdrop-filter: blur(3px); /* Размытие фона */
+
+		& div {
+			background-color: black;
+			transform: rotateY(90deg);
+			opacity: 0;
+			transition: 1s ease-in-out;
+			border: 7px double #ffdead;
+
+			& p {
+				color: #ffdead;
+				font-size: toRem(34);
+				letter-spacing: 2px;
+			}
+		}
+
+		& h3 {
+			color: #ffdead;
+		}
+	}
+}
+
+// ===========================================    neptun      =========================================================
+
+.voa {
+	width: toRem(70);
+	position: absolute;
+
+	animation: vo 30s ease-in-out infinite;
+
+	@keyframes vo {
+		0% {
+			top: 80%;
+			left: -30%;
+			transform: scale(6);
+		}
+
+		100% {
+			top: 30%;
+			left: 120%;
+			transform: scale(0.1);
+		}
+	}
+}
+
+.voa2 {
+	width: toRem(70);
+	position: absolute;
+
+	animation: vo2 60s ease-in-out infinite;
+
+	@keyframes vo2 {
+		0% {
+			top: 0%;
+			left: -30%;
+			transform: scale(0.1);
+		}
+
+		100% {
+			top: 100%;
+			left: 200%;
+			transform: scale(10);
+		}
+	}
+}
+
+.neptun {
+	&__body {
+		background-image: url(../img/neptunfon.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		padding: toRem(100) 0;
+	}
+	&__container {
+		position: relative;
+	}
+	&__title {
+		& h2 {
+			color: #3c597e;
+		}
+	}
+	&__block {
+	}
+	&__block--photo {
+		& img {
+			width: toRem(450);
+		}
+	}
+	&__block--text {
+		& p {
+			color: white;
+			text-shadow:
+				0px 0px 2px rgb(4, 4, 4),
+				2px 2px 6px #3c597e,
+				-2px -2px 6px #3c597e;
+			letter-spacing: 2px;
+			font-weight: 700;
+			margin-bottom: toRem(30);
+			font-size: toRem(34);
+		}
+	}
+	&__slider {
+		text-align: center;
+		margin-top: toRem(50);
+	}
+	&__slider--body {
+		position: relative;
+		background-color: #3c597e68;
+
+		& div {
+			position: absolute;
+			top: 100%;
+			left: -100%;
+			border: 1px solid white;
+			transition: 1s ease-in-out;
+
+			background-color: #3c597e;
+			& p {
+				color: white;
+				font-size: toRem(34);
+				letter-spacing: 2px;
+			}
+		}
+
+		& h3 {
+			color: #3c597e;
+			// font-weight: 600;
+			letter-spacing: 2px;
+			text-shadow: 0px 0px 2px rgb(254, 253, 253);
+		}
+	}
+}

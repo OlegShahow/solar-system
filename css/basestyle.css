@@ -1,0 +1,48 @@
+.dela-gothic-one-regular {
+  font-family: "Dela Gothic One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yeseva-one-regular {
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kelly-slab-regular {
+  font-family: "Kelly Slab", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alegreya-sc-regular {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tektur {
+  font-family: "Tektur", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+@font-face {
+  font-family: "starJedi";
+  src: url("../fonts/WaterSplash-w1gWw.ttf");
+}
+@font-face {
+  font-family: "SfAltoutlineItalic";
+  src: url("../fonts/SfDistantGalaxyAltoutlineItalic-ZJDZ.ttf");
+}
+@font-face {
+  font-family: "OutlineItalic";
+  src: url("../fonts/SfDistantGalaxyOutlineItalic-4yA4.ttf");
+}
+@font-face {
+  font-family: "Argosy";
+  src: url("../fonts/Argosy the Second.ttf");
+}
