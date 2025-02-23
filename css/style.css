@@ -137,23 +137,18 @@ html {
 
 .sound {
   position: fixed;
-  top: 6.25rem;
-  left: -3.125rem;
+  top: 1.875rem;
+  left: 1.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-radius: 0.625rem;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
   cursor: pointer;
+  z-index: 5000;
 }
 .sound img {
   width: 3.125rem;
   margin-right: 1.25rem;
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
   cursor: pointer;
 }
 .sound input {
@@ -178,7 +173,8 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 0.375rem;
-  top: 15.625rem;
+  top: 9.375rem;
+  z-index: 10000;
 }
 .sidenav a {
   position: relative;
@@ -272,6 +268,21 @@ html {
   text-shadow: none;
 }
 
+.planetfoto {
+  margin-left: 20%;
+  font-size: 1.25rem;
+  padding: 0.625rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 0.625rem;
+  -webkit-box-shadow: 0px 0px 6px white;
+          box-shadow: 0px 0px 6px white;
+}
+.planetfoto:hover {
+  -webkit-box-shadow: 0px 0px 16px white;
+          box-shadow: 0px 0px 16px white;
+}
+
 .btn {
   display: inline-block;
   margin-top: 1.875rem;
@@ -356,9 +367,23 @@ h3 {
   height: 100%;
   padding: 6.25rem 0;
 }
+.solar__system--title {
+  text-align: center;
+}
 .solar__system--title h2 {
+  font-size: 3.125rem;
+  font-family: "Alegreya SC", serif;
+  font-weight: bold;
+  color: transparent;
+  letter-spacing: 1px;
   color: gold;
   text-shadow: -2px -2px 3px red;
+}
+.solar__system--title span {
+  color: white;
+  font-size: 2.5rem;
+  font-family: "SfAltoutlineItalic";
+  text-shadow: none;
 }
 .solar__system--text {
   margin-top: 25rem;
@@ -366,7 +391,7 @@ h3 {
 .solar__system--text p {
   font-family: "Alegreya SC", serif;
   color: white;
-  font-size: 1.875rem;
+  font-size: 2.125rem;
   margin-top: 1.875rem;
   line-height: 1.5;
   letter-spacing: 1px;
@@ -608,6 +633,7 @@ h3 {
   width: 100%;
   height: 100%;
   padding: 6.25rem 0;
+  position: relative;
 }
 .mercury__block--photo {
   width: 18.75rem;
@@ -652,6 +678,7 @@ h3 {
   }
 }
 .mercury__block--text p {
+  font-size: 2.125rem;
   color: #c0c0c0;
   margin-bottom: 1.875rem;
 }
@@ -721,6 +748,7 @@ h3 {
   width: 100%;
   height: 100%;
   padding: 6.25rem 0;
+  position: relative;
 }
 .venus__title h2 {
   color: #8b4513;
@@ -766,6 +794,7 @@ h3 {
   }
 }
 .venus__block--text p {
+  font-size: 2.125rem;
   color: white;
   margin-bottom: 1.875rem;
   text-shadow: 0px 0px 1px #8b4513, 4px 4px 10px #8b4513, -4px -4px 10px #8b4513;
@@ -851,6 +880,7 @@ h3 {
   position: relative;
 }
 .earth__block--text p {
+  font-size: 2.125rem;
   color: #00bfff;
   margin-bottom: 3.125rem;
   text-shadow: 1px 1px 6px #3434ed, -1px -1px 6px #3434ed;
@@ -960,6 +990,7 @@ h3 {
   background-size: cover;
   background-attachment: fixed;
   padding: 6.25rem 0;
+  position: relative;
 }
 .mars__title h2 {
   color: #dc143c;
@@ -1260,6 +1291,7 @@ h3 {
   background-size: cover;
   background-attachment: fixed;
   padding: 6.25rem 2.5rem;
+  position: relative;
 }
 .jupiter__container {
   position: relative;
@@ -1269,6 +1301,7 @@ h3 {
   color: rgb(139, 69, 19);
 }
 .jupiter__block--text p {
+  font-size: 2.125rem;
   color: white;
   text-shadow: 0px 0px 1px black, 2px 2px 10px rgb(139, 69, 19), -2px -2px 10px rgb(139, 69, 19), 4px 4px 10px rgb(7, 7, 7), -4px -4px 10px rgb(9, 9, 9);
   padding-bottom: 1.875rem;
@@ -1528,6 +1561,7 @@ h3 {
   width: 100%;
   height: 100%;
   padding: 6.25rem 0;
+  position: relative;
 }
 .saturn__container {
   position: relative;
@@ -1607,6 +1641,7 @@ h3 {
   margin-top: 28.125rem;
 }
 .saturn__block--text p {
+  font-size: 2.125rem;
   margin-bottom: 1.875rem;
   color: #dcdcdc;
   text-shadow: 1px 1px 6px #434305;
@@ -1804,6 +1839,7 @@ h3 {
   background-size: cover;
   padding: 6.25rem 0;
   overflow: hidden;
+  position: relative;
 }
 .uran__container {
   position: relative;
@@ -1820,6 +1856,7 @@ h3 {
           backdrop-filter: blur(3px); /* Размытие фона */
 }
 .uran__block--text p {
+  font-size: 2.125rem;
   color: #ffdead;
   font-size: 2.125rem;
   margin-bottom: 1.875rem;
@@ -1929,6 +1966,7 @@ h3 {
   background-position: center;
   background-size: cover;
   padding: 6.25rem 0;
+  position: relative;
 }
 .neptun__container {
   position: relative;
@@ -1940,6 +1978,7 @@ h3 {
   width: 28.125rem;
 }
 .neptun__block--text p {
+  font-size: 2.125rem;
   color: white;
   text-shadow: 0px 0px 2px rgb(4, 4, 4), 2px 2px 6px #3c597e, -2px -2px 6px #3c597e;
   letter-spacing: 2px;
@@ -1973,4 +2012,154 @@ h3 {
   color: #3c597e;
   letter-spacing: 2px;
   text-shadow: 0px 0px 2px rgb(254, 253, 253);
+}
+
+.planet__foto {
+  padding: 3.125rem 0;
+  background-color: black;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.planet__foto:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: rgb(67, 66, 66);
+}
+.planet__foto--title {
+  text-align: center;
+}
+.planet__foto--title h2 {
+  color: white;
+  font-size: 2.125rem;
+  letter-spacing: 3px;
+}
+
+.astronoms {
+  background-image: url(../img/astro.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 6.25rem 0;
+}
+.astronoms__title {
+  text-align: center;
+}
+.astronoms__title h2 {
+  font-family: "Alegreya SC", serif;
+  color: white;
+  font-size: 3.125rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black, 3px 3px 6px black, -3px -3px 6px black;
+}
+.astronoms__text {
+  text-align: center;
+  margin: 1.875rem 0;
+}
+.astronoms__text P {
+  color: white;
+  font-size: 2.125rem;
+  line-height: 1.5;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black, 3px 3px 6px black, -3px -3px 6px black;
+}
+.astronoms__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 1.875rem;
+  -webkit-column-gap: 1.875rem;
+     -moz-column-gap: 1.875rem;
+          column-gap: 1.875rem;
+  color: white;
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black, 3px 3px 6px black, -3px -3px 6px black;
+}
+.astronoms__body p {
+  margin: 1.25rem 0;
+}
+.astronoms__body span {
+  font-family: "Alegreya SC", serif;
+}
+.astronoms__card {
+  text-align: center;
+  width: 22.875rem;
+  padding: 0.625rem;
+  -webkit-box-shadow: inset 0px 0px 16px white;
+          box-shadow: inset 0px 0px 16px white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 1.875rem;
+}
+.astronoms__card img {
+  width: 100%;
+  cursor: pointer;
+}
+.astro__biogr {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50000;
+}
+.astro__biogr--block {
+  width: 100%;
+  height: 100%;
+}
+.astro__biogr--block img {
+  position: absolute; /* Позиционируем картинку относительно родителя */
+  top: 50%; /* Смещаем картинку по вертикали на 50% от родителя */
+  left: 50%; /* Смещаем картинку по горизонтали на 50% от родителя */
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); /* Сдвигаем картинку обратно на 50% её ширины и высоты */
+  z-index: 55000;
+}
+
+.astro--p {
+  position: absolute;
+  text-align: center;
+  width: 90vw;
+  height: 37.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 3.125rem;
+  z-index: 65000;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backdrop-filter: blur(36px);
+          backdrop-filter: blur(36px); /* Размытие фона */
+  background-color: rgb(11, 11, 11);
+}
+.astro--p p {
+  font-size: 3.375rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 3px;
+  text-shadow: 0px 0px 26px black;
 }

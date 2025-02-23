@@ -500,3 +500,31 @@ document.addEventListener("click", () => {
 	})
 	nepcount = 0;
 })
+
+// -----------------------------  биографии учёных    ----------------------------------------------------------------------------------
+
+
+const astronomsImg = document.querySelectorAll(".klik");  // Все картинки
+const astronomsBiogr = document.querySelectorAll(".astro__biogr");  // Все блоки с биографиями
+
+astronomsImg.forEach((im, index) => {
+	im.addEventListener("click", (event) => {
+		// Скрыть все блоки с биографиями
+		astronomsBiogr.forEach(bio => {
+			bio.style.display = "none";
+		});
+
+		// Показать блок биографии, соответствующий нажатой картинке
+		astronomsBiogr[index].style.display = "block";
+		document.body.style.overflow = "hidden";  // Запрещаем прокрутку
+		event.stopPropagation();
+
+	});
+});
+
+document.addEventListener("click", () => {
+	astronomsBiogr.forEach(bi => {
+		bi.style.display = "none";
+	})
+	document.body.style.overflow = "auto";  // Запрещаем прокрутку
+})

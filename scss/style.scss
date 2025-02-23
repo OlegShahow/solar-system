@@ -45,17 +45,15 @@ html {
 }
 .sound {
 	position: fixed;
-	top: toRem(100);
-	left: toRem(-50);
+	top: toRem(30);
+	left: toRem(30);
 	display: flex;
-	// background-color: #ffd90075;
 	border-radius: toRem(10);
-	transform: rotate(90deg);
 	cursor: pointer;
+	z-index: 5000;
 	& img {
 		width: toRem(50);
 		margin-right: toRem(20);
-		transform: rotate(-90deg);
 		cursor: pointer;
 	}
 
@@ -76,9 +74,10 @@ html {
 	flex-direction: column;
 	// align-items: flex-end;
 	row-gap: toRem(6);
-	top: toRem(250);
+	top: toRem(150);
 	// left: toRem(100);
 	// border: 1px solid white;
+	z-index: 10000;
 	& a {
 		position: relative;
 		text-align: center;
@@ -149,6 +148,9 @@ html {
 // *******************************************************************************************************************88
 .title {
 	text-align: center;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
 	& h2 {
 		font-size: toRem(50);
 		font-family: "Alegreya SC", serif;
@@ -166,6 +168,19 @@ html {
 		font-size: toRem(40);
 		font-family: "SfAltoutlineItalic";
 		text-shadow: none;
+	}
+}
+
+.planetfoto {
+	margin-left: 20%;
+	font-size: toRem(20);
+	padding: toRem(10);
+	color: white;
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: toRem(10);
+	box-shadow: 0px 0px 6px white;
+	&:hover {
+		box-shadow: 0px 0px 16px white;
 	}
 }
 
@@ -225,7 +240,12 @@ h3 {
 	padding: toRem(20);
 	text-align: center;
 }
+
+// ...................................................................................................
+
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// ==========================   solar system ===========================================================================
 
 .solar {
 	&__system {
@@ -240,9 +260,22 @@ h3 {
 		// padding-bottom: toRem(100);
 	}
 	&__system--title {
+		text-align: center;
 		& h2 {
+			font-size: toRem(50);
+			font-family: "Alegreya SC", serif;
+			font-weight: bold;
+			color: transparent;
+			letter-spacing: 1px;
 			color: gold;
 			text-shadow: -2px -2px 3px red;
+		}
+
+		& span {
+			color: white;
+			font-size: toRem(40);
+			font-family: "SfAltoutlineItalic";
+			text-shadow: none;
 		}
 	}
 	&__system--text {
@@ -251,7 +284,7 @@ h3 {
 		& p {
 			font-family: "Alegreya SC", serif;
 			color: white;
-			font-size: toRem(30);
+			font-size: toRem(34);
 			margin-top: toRem(30);
 			line-height: 1.5;
 			letter-spacing: 1px;
@@ -488,6 +521,51 @@ h3 {
 
 // =================================     .mercury    ================================================================
 
+// .foto {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	opacity: 0; /* Элемент изначально невидим */
+// 	pointer-events: none; /* Отключаем взаимодействие с элементом  ЧТОБ НЕ БЛОКИРОВАЛ ДРУГИЕ КЛИКИ */
+// 	transition: 1s ease-in-out;
+
+// 	&__block {
+// 		position: relative;
+// 		width: 100%;
+// 		height: 100%;
+
+// 		& img {
+// 			position: absolute;
+// 			top: 0;
+// 			left: 0;
+// 			width: 100%;
+// 			height: auto;
+// 			z-index: 1000;
+// 		}
+// 	}
+// }
+
+// .fotovisible {
+// 	opacity: 1; /* Элемент становится видимым */
+// 	pointer-events: all; /* Включаем взаимодействие с элементом */
+// }
+
+// .fbtn {
+// 	position: absolute;
+// 	top: toRem(500);
+// 	left: 90%;
+// 	width: toRem(80);
+// 	padding: toRem(10);
+// 	background-color: rgba(255, 255, 255, 0.461);
+// 	z-index: 5000;
+// 	& button {
+// 		& img {
+// 			width: 100%;
+// 		}
+// 	}
+// }
+
 .mercury {
 	&__body {
 		background-image: url(../img/mercuryfone.jpg);
@@ -498,6 +576,11 @@ h3 {
 		width: 100%;
 		height: 100%;
 		padding: toRem(100) 0;
+		position: relative;
+	}
+
+	&__container {
+		// border: 1px solid white;
 	}
 
 	&__block--photo {
@@ -524,6 +607,7 @@ h3 {
 	}
 	&__block--text {
 		& p {
+			font-size: toRem(34);
 			color: #c0c0c0;
 			margin-bottom: toRem(30);
 		}
@@ -589,6 +673,7 @@ h3 {
 		width: 100%;
 		height: 100%;
 		padding: toRem(100) 0;
+		position: relative;
 	}
 
 	&__title {
@@ -626,6 +711,7 @@ h3 {
 	&__block--text {
 		// border: 1px solid white;
 		& p {
+			font-size: toRem(34);
 			color: white;
 			margin-bottom: toRem(30);
 			text-shadow:
@@ -708,6 +794,7 @@ h3 {
 
 	&__block--text {
 		& p {
+			font-size: toRem(34);
 			color: #00bfff;
 			margin-bottom: toRem(50);
 			text-shadow:
@@ -793,6 +880,7 @@ h3 {
 		background-size: cover;
 		background-attachment: fixed;
 		padding: toRem(100) 0;
+		position: relative;
 	}
 
 	&__title {
@@ -1006,7 +1094,7 @@ h3 {
 		background-size: cover;
 		background-attachment: fixed;
 		padding: toRem(100) toRem(40);
-		// height: 100vh;
+		position: relative;
 	}
 	&__container {
 		position: relative;
@@ -1024,6 +1112,7 @@ h3 {
 	}
 	&__block--text {
 		& p {
+			font-size: toRem(34);
 			color: white;
 			text-shadow:
 				0px 0px 1px black,
@@ -1227,6 +1316,7 @@ h3 {
 		width: 100%;
 		height: 100%;
 		padding: toRem(100) 0;
+		position: relative;
 	}
 	&__container {
 		position: relative;
@@ -1282,6 +1372,7 @@ h3 {
 		// border: 1px solid white;
 
 		& p {
+			font-size: toRem(34);
 			margin-bottom: toRem(30);
 			color: #dcdcdc;
 			text-shadow: 1px 1px 6px #434305;
@@ -1300,8 +1391,7 @@ h3 {
 		height: toRem(200);
 		// border: 1px solid white;
 
-
-		& h3{
+		& h3 {
 			color: #dcdcdc;
 		}
 
@@ -1419,6 +1509,7 @@ h3 {
 		background-size: cover;
 		padding: toRem(100) 0;
 		overflow: hidden;
+		position: relative;
 	}
 	&__container {
 		position: relative;
@@ -1442,6 +1533,7 @@ h3 {
 		backdrop-filter: blur(3px); /* Размытие фона */
 
 		& p {
+			font-size: toRem(34);
 			color: #ffdead;
 			font-size: toRem(34);
 			margin-bottom: toRem(30);
@@ -1530,6 +1622,7 @@ h3 {
 		background-position: center;
 		background-size: cover;
 		padding: toRem(100) 0;
+		position: relative;
 	}
 	&__container {
 		position: relative;
@@ -1548,6 +1641,7 @@ h3 {
 	}
 	&__block--text {
 		& p {
+			font-size: toRem(34);
 			color: white;
 			text-shadow:
 				0px 0px 2px rgb(4, 4, 4),
@@ -1590,3 +1684,161 @@ h3 {
 		}
 	}
 }
+// =====================================================================================================================
+
+.planet {
+	&__foto {
+		padding: toRem(50) 0;
+		background-color: black;
+		cursor: pointer;
+		transition: 0.5s ease-in-out;
+		&:hover {
+			transform: scale(1.1);
+			background-color: rgb(67, 66, 66);
+		}
+	}
+	&__foto--title {
+		text-align: center;
+		& h2 {
+			color: white;
+			font-size: toRem(34);
+			letter-spacing: 3px;
+		}
+	}
+}
+
+// ===========================================  astronoms   =================================================================
+
+.astronoms {
+	background-image: url(../img/astro.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+	padding: toRem(100) 0;
+
+	&__container {
+	}
+	&__title {
+		text-align: center;
+		& h2 {
+			font-family: "Alegreya SC", serif;
+			color: white;
+			font-size: toRem(50);
+			// margin-top: toRem(30);
+			letter-spacing: 1px;
+			text-shadow:
+				1px 1px 6px black,
+				-1px -1px 6px black,
+				3px 3px 6px black,
+				-3px -3px 6px black;
+		}
+	}
+	&__text {
+		text-align: center;
+		margin: toRem(30) 0;
+		& P {
+			color: white;
+			font-size: toRem(34);
+			line-height: 1.5;
+			letter-spacing: 3px;
+			text-shadow:
+				1px 1px 6px black,
+				-1px -1px 6px black,
+				3px 3px 6px black,
+				-3px -3px 6px black;
+		}
+	}
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		row-gap: toRem(30);
+		column-gap: toRem(30);
+		color: white;
+		font-size: toRem(28);
+		letter-spacing: 3px;
+		text-shadow:
+			1px 1px 6px black,
+			-1px -1px 6px black,
+			3px 3px 6px black,
+			-3px -3px 6px black;
+
+		& p {
+			margin: toRem(20) 0;
+		}
+		& span {
+			font-family: "Alegreya SC", serif;
+		}
+	}
+	&__card {
+		text-align: center;
+		width: toRem(366);
+		padding: toRem(10);
+		box-shadow: inset 0px 0px 16px white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: toRem(30);
+
+		& img {
+			width: 100%;
+			cursor: pointer;
+			// transition: 0.5s ease-in-out;
+			&:hover {
+				// transform: scale(1.05);
+			}
+		}
+	}
+}
+// ..............................   astro__biogr    ...........................................
+
+.astro {
+	&__biogr {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 50000;
+	}
+	&__biogr--block {
+		width: 100%;
+		height: 100%;
+
+		& img {
+			position: absolute; /* Позиционируем картинку относительно родителя */
+			top: 50%; /* Смещаем картинку по вертикали на 50% от родителя */
+			left: 50%; /* Смещаем картинку по горизонтали на 50% от родителя */
+			transform: translate(-50%, -50%); /* Сдвигаем картинку обратно на 50% её ширины и высоты */
+			z-index: 55000;
+		}
+	}
+}
+.astro--p {
+	position: absolute;
+	text-align: center;
+	width: 90vw;
+	height: toRem(600);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: toRem(50);
+	z-index: 65000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	backdrop-filter: blur(36px); /* Размытие фона */
+	background-color: rgb(11, 11, 11);
+
+	& p {
+		font-size: toRem(54);
+		margin-bottom: toRem(40);
+		letter-spacing: 3px;
+		text-shadow: 0px 0px 26px black;
+	}
+}
+// ................................................................................
