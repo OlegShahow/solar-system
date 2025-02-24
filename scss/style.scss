@@ -442,13 +442,18 @@ h3 {
 	}
 
 	& button {
-		font-size: toRem(20);
+		font-size: toRem(26);
 		padding: toRem(10);
 		margin-top: toRem(20);
-		border-radius: toRem(10);
+		box-shadow:
+			inset 0px 4px 6px rgba(255, 255, 255, 0.7),
+			/* тень сверху */ inset 0px -4px 6px rgba(255, 255, 255, 0.7); /* тень снизу */
 		color: white;
-		background-color: rgba(255, 255, 255, 0.126);
+		background-color: rgba(255, 255, 255, 0);
 		clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
+		&:hover {
+			transform: scale(1.02);
+		}
 	}
 }
 
@@ -565,6 +570,45 @@ h3 {
 // 		}
 // 	}
 // }
+
+.mercury--kom1 {
+	position: absolute;
+	width: toRem(40);
+	animation: k1 20s ease-in-out infinite;
+
+	@keyframes k1 {
+		0% {
+			top: -10%;
+			left: -10%;
+		}
+		100% {
+			top: 110%;
+			left: 110%;
+		}
+	}
+	& img {
+		width: 100%;
+	}
+}
+.mercury--kom2 {
+	position: absolute;
+	width: toRem(40);
+	animation: k2 10s ease-in-out infinite;
+
+	@keyframes k2 {
+		0% {
+			top: -10%;
+			left: 20%;
+		}
+		100% {
+			top: 110%;
+			left: 90%;
+		}
+	}
+	& img {
+		width: 100%;
+	}
+}
 
 .mercury {
 	&__body {
@@ -754,6 +798,28 @@ h3 {
 			p {
 				color: #de6a18;
 				text-shadow: 0px 0px 1px rgb(250, 248, 248);
+			}
+		}
+	}
+}
+
+.venus__galaxy {
+	position: absolute;
+	top: 40%;
+	left: 60%;
+	width: toRem(600);
+	& img {
+		width: 100%;
+		opacity: 0.4;
+
+		animation: gal 60s ease-in-out infinite;
+
+		@keyframes gal {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
 			}
 		}
 	}
@@ -976,7 +1042,7 @@ h3 {
 	width: toRem(60);
 	position: absolute;
 
-	animation: kal 90s infinite;
+	animation: kal 90s infinite ease-in-out;
 
 	@keyframes kal {
 		0% {
@@ -1010,7 +1076,7 @@ h3 {
 	width: toRem(70);
 	position: absolute;
 
-	animation: eur 130s infinite;
+	animation: eur 130s infinite ease-in-out;
 
 	@keyframes eur {
 		0% {
@@ -1043,7 +1109,7 @@ h3 {
 	width: toRem(35);
 	position: absolute;
 
-	animation: io 60s infinite;
+	animation: io 60s infinite ease-in-out;
 
 	@keyframes io {
 		0% {
@@ -1201,7 +1267,7 @@ h3 {
 .vs3 {
 	top: 16%;
 	left: 50%;
-	animation: blick 10s infinite ease-in-out;
+	animation: blick 8s infinite ease-in-out;
 	animation-delay: 8s; /* пауза перед повтором */
 }
 .vs4 {
@@ -1219,7 +1285,7 @@ h3 {
 .vs6 {
 	top: 70%;
 	left: 50%;
-	animation: blick 10s infinite ease-in-out;
+	animation: blick 5s infinite ease-in-out;
 	animation-delay: 8s; /* пауза перед повтором */
 }
 .vs7 {
@@ -1237,7 +1303,7 @@ h3 {
 .vs9 {
 	top: 100%;
 	left: 80%;
-	animation: blick 10s infinite ease-in-out;
+	animation: blick 7s infinite ease-in-out;
 	animation-delay: 5s; /* пауза перед повтором */
 }
 .vs10 {
@@ -1255,7 +1321,7 @@ h3 {
 .vs12 {
 	top: 27%;
 	left: 61;
-	animation: blick 10s infinite ease-in-out;
+	animation: blick 6s infinite ease-in-out;
 	animation-delay: 2s; /* пауза перед повтором */
 }
 .vs13 {
@@ -1273,7 +1339,7 @@ h3 {
 .vs15 {
 	top: 31%;
 	left: 28%;
-	animation: blick 10s infinite ease-in-out;
+	animation: blick 4s infinite ease-in-out;
 	animation-delay: 6s; /* пауза перед повтором */
 }
 .vs16 {
@@ -1291,7 +1357,7 @@ h3 {
 .vs18 {
 	top: 64%;
 	left: 89%;
-	animation: blick 10s infinite ease-in-out;
+	animation: blick 8s infinite ease-in-out;
 	animation-delay: 2s; /* пауза перед повтором */
 }
 
@@ -1597,7 +1663,7 @@ h3 {
 	width: toRem(70);
 	position: absolute;
 
-	animation: vo2 60s ease-in-out infinite;
+	animation: vo2 46s ease-in-out infinite;
 
 	@keyframes vo2 {
 		0% {
@@ -1691,9 +1757,10 @@ h3 {
 		padding: toRem(50) 0;
 		background-color: black;
 		cursor: pointer;
-		transition: 0.5s ease-in-out;
+		box-shadow: inset 0px 0px 20px white;
+		transition: 0.2s ease-in-out;
 		&:hover {
-			transform: scale(1.1);
+			transform: scale(1.5);
 			background-color: rgb(67, 66, 66);
 		}
 	}
@@ -1842,3 +1909,27 @@ h3 {
 	}
 }
 // ................................................................................
+
+// ==================================================  МКС    ================================================
+
+.online {
+	background-color: black;
+	&__container {
+		padding: toRem(100) 0;
+		text-align: center;
+	}
+}
+.online--title {
+	& h2 {
+		color: white;
+		font-size: toRem(36);
+		letter-spacing: 3px;
+	}
+
+	& p {
+		color: white;
+		font-size: toRem(30);
+		margin: toRem(50) 0;
+		letter-spacing: 3px;
+	}
+}

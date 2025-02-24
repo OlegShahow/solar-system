@@ -546,14 +546,20 @@ h3 {
   font-size: 2.5rem;
 }
 .all__planet button {
-  font-size: 1.25rem;
+  font-size: 1.625rem;
   padding: 0.625rem;
   margin-top: 1.25rem;
-  border-radius: 0.625rem;
+  -webkit-box-shadow: inset 0px 4px 6px rgba(255, 255, 255, 0.7), inset 0px -4px 6px rgba(255, 255, 255, 0.7);
+          box-shadow: inset 0px 4px 6px rgba(255, 255, 255, 0.7), inset 0px -4px 6px rgba(255, 255, 255, 0.7); /* тень снизу */
   color: white;
-  background-color: rgba(255, 255, 255, 0.126);
+  background-color: rgba(255, 255, 255, 0);
   -webkit-clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
           clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
+}
+.all__planet button:hover {
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .up__figure {
@@ -622,6 +628,66 @@ h3 {
   -webkit-transition: 1s ease;
   transition: 1s ease;
   z-index: 5000;
+}
+
+.mercury--kom1 {
+  position: absolute;
+  width: 2.5rem;
+  -webkit-animation: k1 20s ease-in-out infinite;
+          animation: k1 20s ease-in-out infinite;
+}
+@-webkit-keyframes k1 {
+  0% {
+    top: -10%;
+    left: -10%;
+  }
+  100% {
+    top: 110%;
+    left: 110%;
+  }
+}
+@keyframes k1 {
+  0% {
+    top: -10%;
+    left: -10%;
+  }
+  100% {
+    top: 110%;
+    left: 110%;
+  }
+}
+.mercury--kom1 img {
+  width: 100%;
+}
+
+.mercury--kom2 {
+  position: absolute;
+  width: 2.5rem;
+  -webkit-animation: k2 10s ease-in-out infinite;
+          animation: k2 10s ease-in-out infinite;
+}
+@-webkit-keyframes k2 {
+  0% {
+    top: -10%;
+    left: 20%;
+  }
+  100% {
+    top: 110%;
+    left: 90%;
+  }
+}
+@keyframes k2 {
+  0% {
+    top: -10%;
+    left: 20%;
+  }
+  100% {
+    top: 110%;
+    left: 90%;
+  }
+}
+.mercury--kom2 img {
+  width: 100%;
 }
 
 .mercury__body {
@@ -855,6 +921,39 @@ h3 {
   text-shadow: 0px 0px 1px rgb(250, 248, 248);
 }
 
+.venus__galaxy {
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  width: 37.5rem;
+}
+.venus__galaxy img {
+  width: 100%;
+  opacity: 0.4;
+  -webkit-animation: gal 60s ease-in-out infinite;
+          animation: gal 60s ease-in-out infinite;
+}
+@-webkit-keyframes gal {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes gal {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 /* Класс для видимости слайда */
 .show-slide {
   left: 0 !important; /* Когда слайд должен появиться */
@@ -1083,8 +1182,8 @@ h3 {
 .kallisto {
   width: 3.75rem;
   position: absolute;
-  -webkit-animation: kal 90s infinite;
-          animation: kal 90s infinite;
+  -webkit-animation: kal 90s infinite ease-in-out;
+          animation: kal 90s infinite ease-in-out;
 }
 @-webkit-keyframes kal {
   0% {
@@ -1146,8 +1245,8 @@ h3 {
 .europa {
   width: 4.375rem;
   position: absolute;
-  -webkit-animation: eur 130s infinite;
-          animation: eur 130s infinite;
+  -webkit-animation: eur 130s infinite ease-in-out;
+          animation: eur 130s infinite ease-in-out;
 }
 @-webkit-keyframes eur {
   0% {
@@ -1209,8 +1308,8 @@ h3 {
 .io {
   width: 2.1875rem;
   position: absolute;
-  -webkit-animation: io 60s infinite;
-          animation: io 60s infinite;
+  -webkit-animation: io 60s infinite ease-in-out;
+          animation: io 60s infinite ease-in-out;
 }
 @-webkit-keyframes io {
   0% {
@@ -1378,8 +1477,8 @@ h3 {
 .vs3 {
   top: 16%;
   left: 50%;
-  -webkit-animation: blick 10s infinite ease-in-out;
-          animation: blick 10s infinite ease-in-out;
+  -webkit-animation: blick 8s infinite ease-in-out;
+          animation: blick 8s infinite ease-in-out;
   -webkit-animation-delay: 8s;
           animation-delay: 8s; /* пауза перед повтором */
 }
@@ -1405,8 +1504,8 @@ h3 {
 .vs6 {
   top: 70%;
   left: 50%;
-  -webkit-animation: blick 10s infinite ease-in-out;
-          animation: blick 10s infinite ease-in-out;
+  -webkit-animation: blick 5s infinite ease-in-out;
+          animation: blick 5s infinite ease-in-out;
   -webkit-animation-delay: 8s;
           animation-delay: 8s; /* пауза перед повтором */
 }
@@ -1432,8 +1531,8 @@ h3 {
 .vs9 {
   top: 100%;
   left: 80%;
-  -webkit-animation: blick 10s infinite ease-in-out;
-          animation: blick 10s infinite ease-in-out;
+  -webkit-animation: blick 7s infinite ease-in-out;
+          animation: blick 7s infinite ease-in-out;
   -webkit-animation-delay: 5s;
           animation-delay: 5s; /* пауза перед повтором */
 }
@@ -1459,8 +1558,8 @@ h3 {
 .vs12 {
   top: 27%;
   left: 61;
-  -webkit-animation: blick 10s infinite ease-in-out;
-          animation: blick 10s infinite ease-in-out;
+  -webkit-animation: blick 6s infinite ease-in-out;
+          animation: blick 6s infinite ease-in-out;
   -webkit-animation-delay: 2s;
           animation-delay: 2s; /* пауза перед повтором */
 }
@@ -1486,8 +1585,8 @@ h3 {
 .vs15 {
   top: 31%;
   left: 28%;
-  -webkit-animation: blick 10s infinite ease-in-out;
-          animation: blick 10s infinite ease-in-out;
+  -webkit-animation: blick 4s infinite ease-in-out;
+          animation: blick 4s infinite ease-in-out;
   -webkit-animation-delay: 6s;
           animation-delay: 6s; /* пауза перед повтором */
 }
@@ -1513,8 +1612,8 @@ h3 {
 .vs18 {
   top: 64%;
   left: 89%;
-  -webkit-animation: blick 10s infinite ease-in-out;
-          animation: blick 10s infinite ease-in-out;
+  -webkit-animation: blick 8s infinite ease-in-out;
+          animation: blick 8s infinite ease-in-out;
   -webkit-animation-delay: 2s;
           animation-delay: 2s; /* пауза перед повтором */
 }
@@ -1927,8 +2026,8 @@ h3 {
 .voa2 {
   width: 4.375rem;
   position: absolute;
-  -webkit-animation: vo2 60s ease-in-out infinite;
-          animation: vo2 60s ease-in-out infinite;
+  -webkit-animation: vo2 46s ease-in-out infinite;
+          animation: vo2 46s ease-in-out infinite;
 }
 @-webkit-keyframes vo2 {
   0% {
@@ -2018,13 +2117,15 @@ h3 {
   padding: 3.125rem 0;
   background-color: black;
   cursor: pointer;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-box-shadow: inset 0px 0px 20px white;
+          box-shadow: inset 0px 0px 20px white;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 .planet__foto:hover {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
   background-color: rgb(67, 66, 66);
 }
 .planet__foto--title {
@@ -2162,4 +2263,24 @@ h3 {
   margin-bottom: 2.5rem;
   letter-spacing: 3px;
   text-shadow: 0px 0px 26px black;
+}
+
+.online {
+  background-color: black;
+}
+.online__container {
+  padding: 6.25rem 0;
+  text-align: center;
+}
+
+.online--title h2 {
+  color: white;
+  font-size: 2.25rem;
+  letter-spacing: 3px;
+}
+.online--title p {
+  color: white;
+  font-size: 1.875rem;
+  margin: 3.125rem 0;
+  letter-spacing: 3px;
 }

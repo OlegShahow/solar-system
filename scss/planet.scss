@@ -1,0 +1,194 @@
+@import "null.scss";
+
+// подключать только если есть в этих файлах данные. пустыми не подключать !!
+// @import "var.scss";
+@import "basestyle.scss";
+
+@function toRem($value) {
+	$baseFontSize: 16;
+	@return ($value/$baseFontSize) * 1rem;
+}
+
+[class*="__container"] {
+	max-width: 1680px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.i1 {
+	position: absolute;
+
+	animation: istr 20s infinite;
+
+	@keyframes istr {
+		0% {
+			top: 30%;
+			left: -100%;
+			width: toRem(470);
+		}
+		40% {
+			top: 50%;
+			left: 60%;
+			width: toRem(1);
+		}
+		100% {
+			top: 50%;
+			left: 60%;
+			width: toRem(1);
+		}
+	}
+}
+
+.i2 {
+	position: absolute;
+
+	animation: istr2 20s infinite;
+
+	@keyframes istr2 {
+		0% {
+			top: 40%;
+			left: -100%;
+			width: toRem(470);
+		}
+		35% {
+			top: 50%;
+			left: 60%;
+			width: toRem(1);
+		}
+		100% {
+			top: 60%;
+			left: 60%;
+			width: toRem(1);
+		}
+	}
+}
+
+.i3 {
+	position: absolute;
+	// top: 0;
+	animation: istr3 10s infinite;
+
+	@keyframes istr3 {
+		0% {
+			top: -40%;
+			left: -100%;
+			width: toRem(470);
+		}
+
+		100% {
+			top: 80%;
+			left: 80%;
+			width: toRem(1);
+		}
+	}
+}
+
+.r2 {
+	position: absolute;
+	width: toRem(50);
+	top: 30%;
+	left: 40%;
+
+	animation: raz 60s infinite ease-in-out;
+}
+
+@keyframes raz {
+	0% {
+		top: 40%;
+		left: 40%;
+		width: toRem(1);
+	}
+
+	100% {
+		top: -100%;
+		left: 10%;
+		width: toRem(1500);
+	}
+}
+
+.wraper {
+	background-image: url(../img/starwars/fone.jpeg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.back{
+	position: absolute;
+	width: toRem(40);
+	top: 3%;
+	left: 1%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	cursor: pointer;
+	&:hover{
+		transform: scale(1.05);
+		box-shadow: 0px 0px 16px white;
+	}
+	& img{
+		width: 90%;
+	}
+}
+.main {
+	&__container {
+		padding: toRem(100) 0;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		// border: 1px solid white;
+	}
+	&__title {
+		& h1 {
+			color: white;
+			font-size: toRem(50);
+			font-family: "Tektur", serif;
+			letter-spacing: 3px;
+			font-weight: bold;
+			text-shadow:
+				0px 0px 1px black,
+				1px 1px 6px black,
+				-1px -1px 6px black;
+		}
+	}
+	&__body {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		// border: 1px solid white;
+	}
+	&__body--planet {
+		& button {
+			padding: toRem(10) toRem(50);
+			font-size: toRem(32);
+			font-weight: 900;
+			color: white;
+			letter-spacing: 2px;
+			text-shadow: 4px 4px 3px black;
+			background-color: #ff7718;
+			box-shadow:
+				inset 0px -10px 6px rgba(0, 0, 0, 0.5),
+				inset 0px 10px 6px rgba(0, 0, 0, 0.5);
+			clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 30% 100%);
+			transition: 0.3s ease-in-out;
+
+			&:hover {
+				text-shadow: -4px 4px 3px black;
+				clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+			}
+		}
+	}
+}
+
+.planet {
+	&__foto--block {
+	}
+}

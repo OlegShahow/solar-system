@@ -1,0 +1,365 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+.dela-gothic-one-regular {
+  font-family: "Dela Gothic One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yeseva-one-regular {
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kelly-slab-regular {
+  font-family: "Kelly Slab", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alegreya-sc-regular {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tektur {
+  font-family: "Tektur", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+@font-face {
+  font-family: "starJedi";
+  src: url("../fonts/WaterSplash-w1gWw.ttf");
+}
+@font-face {
+  font-family: "SfAltoutlineItalic";
+  src: url("../fonts/SfDistantGalaxyAltoutlineItalic-ZJDZ.ttf");
+}
+@font-face {
+  font-family: "OutlineItalic";
+  src: url("../fonts/SfDistantGalaxyOutlineItalic-4yA4.ttf");
+}
+@font-face {
+  font-family: "Argosy";
+  src: url("../fonts/Argosy the Second.ttf");
+}
+[class*=__container] {
+  max-width: 1680px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.i1 {
+  position: absolute;
+  -webkit-animation: istr 20s infinite;
+          animation: istr 20s infinite;
+}
+@-webkit-keyframes istr {
+  0% {
+    top: 30%;
+    left: -100%;
+    width: 29.375rem;
+  }
+  40% {
+    top: 50%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+  100% {
+    top: 50%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+}
+@keyframes istr {
+  0% {
+    top: 30%;
+    left: -100%;
+    width: 29.375rem;
+  }
+  40% {
+    top: 50%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+  100% {
+    top: 50%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+}
+
+.i2 {
+  position: absolute;
+  -webkit-animation: istr2 20s infinite;
+          animation: istr2 20s infinite;
+}
+@-webkit-keyframes istr2 {
+  0% {
+    top: 40%;
+    left: -100%;
+    width: 29.375rem;
+  }
+  35% {
+    top: 50%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+  100% {
+    top: 60%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+}
+@keyframes istr2 {
+  0% {
+    top: 40%;
+    left: -100%;
+    width: 29.375rem;
+  }
+  35% {
+    top: 50%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+  100% {
+    top: 60%;
+    left: 60%;
+    width: 0.0625rem;
+  }
+}
+
+.i3 {
+  position: absolute;
+  -webkit-animation: istr3 10s infinite;
+          animation: istr3 10s infinite;
+}
+@-webkit-keyframes istr3 {
+  0% {
+    top: -40%;
+    left: -100%;
+    width: 29.375rem;
+  }
+  100% {
+    top: 80%;
+    left: 80%;
+    width: 0.0625rem;
+  }
+}
+@keyframes istr3 {
+  0% {
+    top: -40%;
+    left: -100%;
+    width: 29.375rem;
+  }
+  100% {
+    top: 80%;
+    left: 80%;
+    width: 0.0625rem;
+  }
+}
+
+.r2 {
+  position: absolute;
+  width: 3.125rem;
+  top: 30%;
+  left: 40%;
+  -webkit-animation: raz 60s infinite ease-in-out;
+          animation: raz 60s infinite ease-in-out;
+}
+
+@-webkit-keyframes raz {
+  0% {
+    top: 40%;
+    left: 40%;
+    width: 0.0625rem;
+  }
+  100% {
+    top: -100%;
+    left: 10%;
+    width: 93.75rem;
+  }
+}
+
+@keyframes raz {
+  0% {
+    top: 40%;
+    left: 40%;
+    width: 0.0625rem;
+  }
+  100% {
+    top: -100%;
+    left: 10%;
+    width: 93.75rem;
+  }
+}
+.wraper {
+  background-image: url(../img/starwars/fone.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.back {
+  position: absolute;
+  width: 2.5rem;
+  top: 3%;
+  left: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  cursor: pointer;
+}
+.back:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0px 0px 16px white;
+          box-shadow: 0px 0px 16px white;
+}
+.back img {
+  width: 90%;
+}
+
+.main__container {
+  padding: 6.25rem 0;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main__title h1 {
+  color: white;
+  font-size: 3.125rem;
+  font-family: "Tektur", serif;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-shadow: 0px 0px 1px black, 1px 1px 6px black, -1px -1px 6px black;
+}
+.main__body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.main__body--planet button {
+  padding: 0.625rem 3.125rem;
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 3px black;
+  background-color: #ff7718;
+  -webkit-box-shadow: inset 0px -10px 6px rgba(0, 0, 0, 0.5), inset 0px 10px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px -10px 6px rgba(0, 0, 0, 0.5), inset 0px 10px 6px rgba(0, 0, 0, 0.5);
+  -webkit-clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 30% 100%);
+          clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 30% 100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.main__body--planet button:hover {
+  text-shadow: -4px 4px 3px black;
+  -webkit-clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+          clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+}
