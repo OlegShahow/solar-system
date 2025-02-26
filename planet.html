@@ -18,6 +18,17 @@
 </head>
 
 <body>
+
+	<audio id="audios" /*autoplay* />
+	<source src="./sound/tie.mp3" type="audio/mp3">
+	Ваш браузер не поддерживает элемент audio.
+	</audio>
+
+	<div class="sound">
+		<label for="volume"><img src="./img/dinam2.png"></label>
+		<input type="range" id="volume" name="volume" min="0" max="0.03" step="0.001" value="0.03">
+	</div>
+
 	<div class="wraper">
 
 		<a href="index.html">
@@ -27,7 +38,7 @@
 		</a>
 
 
-
+		<audio id="soundes" src="./sound/tie.mp3" preload="auto"></audio>
 		<img class="i1" src="./img/starwars/i1.png">
 		<img class="i2" src="./img/starwars/i1.png">
 		<img class="i3" src="./img/starwars/i1.png">
@@ -40,29 +51,49 @@
 					<h1>Фото планет и их поверхности со спутников </h1>
 				</div>
 				<div class="main__body">
-					<div class="main__body--planet"><img src=""><button>Mercury</button>
-						<div class="planet__foto--block"><img src=""></div>
+
+					<div class="main__body--planet"><button class="body--planet">Mercury</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/mercury/m3.png"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Venus</button>
-						<div class="planet__foto--block"><img src=""></div>
+
+					<div class="main__body--planet"><button class="body--planet">Venus</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/ven/v1.png"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Earth</button>
-						<div class="planet__foto--block"><img src=""></div>
+
+					<div class="main__body--planet"><button class="body--planet">Earth</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/earth.jpg"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Mars</button>
-						<div class="planet__foto--block"><img src=""></div>
+
+					<div class="main__body--planet"><button class="body--planet">Mars</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/mars/m1.jpg"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Jupiter</button>
-						<div class="planet__foto--block"><img src=""></div>
+					<div class="main__body--planet"><button class="body--planet">Jupiter</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/up/u1.jpg"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Saturn</button>
-						<div class="planet__foto--block"><img src=""></div>
+					<div class="main__body--planet"><button class="body--planet">Saturn</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/sat/sat.jpg"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Uranus</button>
-						<div class="planet__foto--block"><img src=""></div>
+					<div class="main__body--planet"><button class="body--planet">Uranus</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/ur/ur1.jpg"></div>
+						</div>
 					</div>
-					<div class="main__body--planet"><img src=""><button>Neptune</button>
-						<div class="planet__foto--block"><img src=""></div>
+					<div class="main__body--planet"><button class="body--planet">Neptune</button>
+						<div class="planet--box">
+							<div class="planet--slider"><img src="./img/nept/ne.png"></div>
+						</div>
 					</div>
 
 				</div>
@@ -75,7 +106,7 @@
 	</div>
 
 
-	<script src="./js/script.js" defer></script>
+	<script src="./js/scriptpl.js" defer></script>
 </body>
 
 </html>

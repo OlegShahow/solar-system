@@ -28,10 +28,6 @@ soundInput.addEventListener("mouseleave", () => {
 
 
 
-
-
-
-
 // // Получаем элемент аудио и регулятор громкости
 // const audio = document.getElementById('audio');
 // const volumeControl = document.getElementById('volume');
@@ -60,6 +56,7 @@ soundInput.addEventListener("mouseleave", () => {
 
 // ...................................   fon music    ............................................................
 
+
 // Получаем элемент аудио и регулятор громкости
 const audio = document.getElementById('audio');
 const volumeControl = document.getElementById('volume');
@@ -67,6 +64,9 @@ const solarSystem = document.querySelector('.solar__system');
 
 // Устанавливаем громкость при загрузке страницы
 audio.volume = volumeControl.value;
+
+// Устанавливаем громкость сразу при загрузке
+audio.volume = 0.09;  // Устанавливаем громкость на 10%
 
 // Флаг для отслеживания, когда пользователь кликает по странице /*  ИМЕННО let (ОБЛАСТЬ ВИДИМОСТИ)  НЕ   const !!!!!!!     */ 
 let userInteracted = false;
@@ -212,41 +212,7 @@ document.addEventListener("click", () => {
 // -------------------------------------  slider  venus -----------------------------------------
 
 
-// const venusButton = document.querySelector(".venus__slider--button button");
-// const venusDivs = document.querySelectorAll(".venus__slider--body div");
 
-// let venCount = 0; // Переменная для отслеживания текущего слайда
-
-// venusButton.addEventListener("click", (event) => {
-// 	// Скрываем все слайды
-// 	venusDivs.forEach(ve => {
-// 		ve.classList.add('show--back');
-// 	});
-
-// 	// Если достигнут последний слайд, начинаем снова с первого
-// 	if (venCount < venusDivs.length) {
-// 		venusDivs[venCount].classList.remove('show--back');
-// 		venusDivs[venCount].classList.add('show');
-// 		venCount++; // Переходим к следующему слайду
-// 	} else {
-// 		// После последнего слайда скрываем все слайды и сбрасываем счетчик
-// 		venusDivs.forEach(ve => {
-// 			ve.classList.remove('show');
-// 			ve.classList.add('show--back');
-// 		});
-// 		venCount = 0;  // Сбрасываем счетчик на начало
-// 	}
-
-// 	event.stopPropagation();
-// });
-
-// document.addEventListener("click", () => {
-// 	venusDivs.forEach(venu => {
-// 		venu.classList.remove('show');
-// 		venu.classList.add('show--back'); // Скручиваем слайды обратно
-// 	});
-// 	venCount = 0;  // Сбрасываем счетчик на начало
-// });
 
 
 const venusButton = document.querySelector(".venus__slider--button button");
@@ -528,3 +494,5 @@ document.addEventListener("click", () => {
 	})
 	document.body.style.overflow = "auto";  // Запрещаем прокрутку
 })
+
+

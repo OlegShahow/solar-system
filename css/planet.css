@@ -127,6 +127,35 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
+.sound {
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sound img {
+  width: 3.125rem;
+  margin-right: 1.875rem;
+  cursor: pointer;
+}
+
+.sound input {
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; /* Плавное изменение opacity */
+}
+
+/* Когда изображение получает фокус, меняем opacity на 1 */
+.sound:hover input {
+  opacity: 1;
+}
+
 .i1 {
   position: absolute;
   -webkit-animation: istr 20s infinite;
@@ -135,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
 @-webkit-keyframes istr {
   0% {
     top: 30%;
-    left: -100%;
+    left: -50%;
     width: 29.375rem;
   }
   40% {
@@ -152,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes istr {
   0% {
     top: 30%;
-    left: -100%;
+    left: -50%;
     width: 29.375rem;
   }
   40% {
@@ -175,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 @-webkit-keyframes istr2 {
   0% {
     top: 40%;
-    left: -100%;
+    left: -50%;
     width: 29.375rem;
   }
   35% {
@@ -192,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes istr2 {
   0% {
     top: 40%;
-    left: -100%;
+    left: -50%;
     width: 29.375rem;
   }
   35% {
@@ -215,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 @-webkit-keyframes istr3 {
   0% {
     top: -40%;
-    left: -100%;
+    left: -50%;
     width: 29.375rem;
   }
   100% {
@@ -227,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes istr3 {
   0% {
     top: -40%;
-    left: -100%;
+    left: -50%;
     width: 29.375rem;
   }
   100% {
@@ -285,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 .back {
   position: absolute;
   width: 2.5rem;
-  top: 3%;
+  top: 12%;
   left: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -343,7 +372,8 @@ h1, h2, h3, h4, h5, h6 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-.main__body--planet button {
+.body--planet {
+  /* кнопки планет */
   padding: 0.625rem 3.125rem;
   font-size: 2rem;
   font-weight: 900;
@@ -358,8 +388,48 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.main__body--planet button:hover {
+.body--planet:hover {
   text-shadow: -4px 4px 3px black;
   -webkit-clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
           clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+}
+
+.planet--box {
+  position: absolute;
+  top: -200%;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.831);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  z-index: 100;
+}
+
+.planet--slider {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.planet--slider img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
