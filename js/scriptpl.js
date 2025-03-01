@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const buttonPlanets = document.querySelectorAll(".body--planet");
 	const planetBoxs = document.querySelectorAll(".planet--box");
+	const prevButton = document.querySelector(".planet--box .prev");
+	const nextButton = document.querySelector(".planet--box .next");
 
 	buttonPlanets.forEach((bp, index) => {
 		bp.addEventListener("click", (event) => {
@@ -74,12 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	})
 
 
-	document.addEventListener("click", () => {
+	document.addEventListener("click", (event) => {
 
 		planetBoxs.forEach(pb => {
 			pb.style.top = "-200%";
 		})
 	})
+
+
+	// --------------------------------  slider   --------------------------------------------------
 
 
 

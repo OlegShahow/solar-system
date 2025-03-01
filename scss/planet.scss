@@ -181,6 +181,26 @@
 				0px 0px 1px black,
 				1px 1px 6px black,
 				-1px -1px 6px black;
+
+
+animation: shr 5s  ease-in-out infinite;
+
+// @keyframes shr {
+// 	0%{
+// transform: rotateX(0);
+// 	}
+// 		25%{
+		
+// 	}
+// 		75%{
+	
+// 	}
+// 	100%{
+// 		transform: rotateX(360deg);
+// 	}
+// }
+
+
 		}
 	}
 	&__body {
@@ -216,7 +236,6 @@
 }
 
 .planet--box {
-	// display: none;
 	position: absolute;
 	top: -200%;
 	left: 0;
@@ -228,8 +247,7 @@
 	transition: 1s ease-in-out;
 	z-index: 100;
 }
-.planet--slider{
-
+.planet--slider {
 	width: 100%;
 	height: 100vh;
 	overflow-x: hidden;
@@ -237,9 +255,45 @@
 	align-items: center;
 	justify-content: center;
 
-	& img{
+	& img {
 		width: 100%;
 		height: 100%;
-	cursor: pointer;
+		cursor: pointer;
+	}
+}
+
+.planet__slider--box {
+	position: relative;
+	margin-top: toRem(20);
+	width: toRem(1500);
+	height: toRem(800);
+	display: flex;
+	left: 0;
+	overflow: hidden;
+
+	& img {
+		min-width: toRem(1500);
+		height: auto;
+	}
+}
+.prev {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.317);
+	transform: rotate(180deg);
+	& img {
+		width: toRem(70);
+	}
+}
+.next {
+	position: absolute;
+	top: 50%;
+	left: 86%;
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.084);
+	& img {
+		width: toRem(70);
 	}
 }
