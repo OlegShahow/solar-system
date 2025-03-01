@@ -498,6 +498,7 @@ h3 {
           justify-content: center;
   width: 100%;
   height: 12.5rem;
+  cursor: pointer;
 }
 .star__slider--body h3 {
   color: #f7e789;
@@ -534,14 +535,12 @@ h3 {
 }
 .star__slider--button {
   margin-top: 1.25rem;
+  cursor: pointer;
 }
 .star__slider--button button {
   color: #f7e789;
 }
 
-.all__planet {
-  margin-top: 12.5rem;
-}
 .all__planet h2 {
   color: white;
   font-size: 2.5rem;
@@ -770,6 +769,7 @@ h3 {
           justify-content: center;
   width: 100%;
   height: 12.5rem;
+  cursor: pointer;
 }
 .mercury__slider--body div {
   position: absolute;
@@ -864,8 +864,9 @@ h3 {
 .venus__block--text p {
   font-size: 2.125rem;
   color: white;
+  letter-spacing: 2px;
   margin-bottom: 1.875rem;
-  text-shadow: 0px 0px 1px #8b4513, 4px 4px 10px #8b4513, -4px -4px 10px #8b4513;
+  text-shadow: 0px 0px 1px black, 4px 4px 10px black, -4px -4px 10px black;
 }
 .venus__slider {
   display: -webkit-box;
@@ -893,6 +894,7 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
+  cursor: pointer;
 }
 .venus__slider--body h3 {
   color: #8b4513;
@@ -984,6 +986,7 @@ h3 {
   font-size: 2.125rem;
   color: #00bfff;
   margin-bottom: 3.125rem;
+  letter-spacing: 2px;
   text-shadow: 1px 1px 6px #3434ed, -1px -1px 6px #3434ed;
 }
 .earth__slider {
@@ -994,6 +997,7 @@ h3 {
 }
 .earth__slider--body {
   position: relative;
+  cursor: pointer;
 }
 .earth__slider--body h3 {
   color: #00bfff;
@@ -1108,6 +1112,9 @@ h3 {
 }
 .mars__slider {
   text-align: center;
+}
+.mars__slider--body {
+  cursor: pointer;
 }
 .mars__slider--body p {
   color: white;
@@ -1416,6 +1423,7 @@ h3 {
 .jupiter__slider--body {
   margin-top: 6.25rem;
   height: 12.5rem;
+  cursor: pointer;
 }
 .jupiter__slider--body div {
   opacity: 0;
@@ -1757,6 +1765,7 @@ h3 {
 .saturn__slider--body {
   width: 100%;
   height: 12.5rem;
+  cursor: pointer;
 }
 .saturn__slider--body h3 {
   color: #dcdcdc;
@@ -1968,6 +1977,7 @@ h3 {
   margin-top: 3.125rem;
 }
 .uran__slider--body {
+  cursor: pointer;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px); /* Размытие фона */
 }
@@ -2092,6 +2102,7 @@ h3 {
 }
 .neptun__slider--body {
   position: relative;
+  cursor: pointer;
   background-color: rgba(60, 89, 126, 0.4078431373);
 }
 .neptun__slider--body div {

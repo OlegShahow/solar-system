@@ -140,7 +140,7 @@ document.addEventListener("click", () => {
 // -------------------------------------  slider  solar -----------------------------------------
 
 
-const starButton = document.querySelector(".star__slider--button button");
+const starButton = document.querySelector(".star__slider--body");
 const starDiv = document.querySelectorAll(".star__slider--body div");
 
 
@@ -180,7 +180,7 @@ document.addEventListener("click", () => {
 
 
 
-const mercuryButton = document.querySelector(".mercury__slider--button button");
+const mercuryButton = document.querySelector(".mercury__slider--body ");
 const mercuryDiv = document.querySelectorAll(".mercury__slider--body div"); // Заменил на корректный селектор
 
 let current = 0;  // Переменная для отслеживания текущего слайда /*  ИМЕННО let (ОБЛАСТЬ ВИДИМОСТИ)  НЕ   const !!!!!!!     */ 
@@ -215,7 +215,7 @@ document.addEventListener("click", () => {
 
 
 
-const venusButton = document.querySelector(".venus__slider--button button");
+const venusButton = document.querySelector(".venus__slider--body");
 const venusDivs = document.querySelectorAll(".venus__slider--body div");
 
 let venCount = 0; // Переменная для отслеживания текущего слайда /*  ИМЕННО let (ОБЛАСТЬ ВИДИМОСТИ)  НЕ   const !!!!!!!     */ 
@@ -252,7 +252,7 @@ document.addEventListener("click", () => {
 
 
 
-const earthButton = document.querySelector(".earth__slider--button button");
+const earthButton = document.querySelector(".earth__slider--body");
 const earthDiv = document.querySelectorAll(".earth__slider--body div");
 
 let calk = 0;  // Переменная для отслеживания текущего слайда /*  ИМЕННО let (ОБЛАСТЬ ВИДИМОСТИ)  НЕ   const !!!!!!!     */ 
@@ -288,7 +288,7 @@ document.addEventListener("click", () => {
 
 
 
-const marsButton = document.querySelector(".mars__slider--button button");
+const marsButton = document.querySelector(".mars__slider--body");
 const marsDiv = document.querySelectorAll(".mars__slider--body div");
 
 
@@ -322,7 +322,7 @@ document.addEventListener("click", () => {
 
 // ---------------------------------  jupiter  ----------------------------------------------------------------------------
 
-const jupiterButton = document.querySelector(".jupiter__slider--button  button");
+const jupiterButton = document.querySelector(".jupiter__slider--body");
 const jupiterDivs = document.querySelectorAll(".jupiter__slider--body div");
 
 
@@ -356,7 +356,7 @@ document.addEventListener("click", () => {
 
 // ----------------------------------   saturn   ---------------------------------------------------------------
 
-const saturnButton = document.querySelector(".saturn__slider--button  button");
+const saturnButton = document.querySelector(".saturn__slider--body");
 const saturnDivs = document.querySelectorAll(".saturn__slider--body div");
 
 
@@ -397,7 +397,7 @@ document.addEventListener("click", () => {
 // ----------------------------------   uran   --------------------------------------------------------------
 
 
-const uranButton = document.querySelector(".uran__slider--button  button");
+const uranButton = document.querySelector(".uran__slider--body");
 const uranDivs = document.querySelectorAll(".uran__slider--body div");
 
 let urancount = 0;  /*  ИМЕННО let (ОБЛАСТЬ ВИДИМОСТИ)  НЕ   const !!!!!!!     */
@@ -433,7 +433,7 @@ document.addEventListener("click", () => {
 
 
 
-const neptunButton = document.querySelector(".neptun__slider--button  button");
+const neptunButton = document.querySelector(".neptun__slider--body");
 const neptunDivs = document.querySelectorAll(".neptun__slider--body div");
 
 

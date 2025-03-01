@@ -397,6 +397,7 @@ h3 {
 		justify-content: center;
 		width: 100%;
 		height: toRem(200);
+		cursor: pointer;
 		// overflow-x: hidden;
 		// border: 1px solid white;
 
@@ -427,6 +428,7 @@ h3 {
 	}
 	&__slider--button {
 		margin-top: toRem(20);
+		cursor: pointer;
 
 		& button {
 			color: #f7e789;
@@ -435,7 +437,7 @@ h3 {
 }
 
 .all__planet {
-	margin-top: toRem(200);
+	// margin-top: toRem(200);
 
 	& h2 {
 		color: white;
@@ -675,6 +677,7 @@ h3 {
 		justify-content: center;
 		width: 100%;
 		height: toRem(200);
+		cursor: pointer;
 		// border: 1px solid white;
 
 		& div {
@@ -759,11 +762,12 @@ h3 {
 		& p {
 			font-size: toRem(34);
 			color: white;
+			letter-spacing: 2px;
 			margin-bottom: toRem(30);
 			text-shadow:
-				0px 0px 1px #8b4513,
-				4px 4px 10px #8b4513,
-				-4px -4px 10px #8b4513;
+				0px 0px 1px black,
+				4px 4px 10px black,
+				-4px -4px 10px black;
 		}
 	}
 	&__slider {
@@ -780,6 +784,7 @@ h3 {
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
+		cursor: pointer;
 		& h3 {
 			color: #8b4513;
 			text-shadow: 0px 0px 1px white;
@@ -865,6 +870,7 @@ h3 {
 			font-size: toRem(34);
 			color: #00bfff;
 			margin-bottom: toRem(50);
+			letter-spacing: 2px;
 			text-shadow:
 				1px 1px 6px #3434ed,
 				-1px -1px 6px#3434ed;
@@ -879,6 +885,7 @@ h3 {
 	}
 	&__slider--body {
 		position: relative;
+		cursor: pointer;
 		& h3 {
 			color: #00bfff;
 		}
@@ -981,6 +988,7 @@ h3 {
 		text-align: center;
 	}
 	&__slider--body {
+		cursor: pointer;
 		// border: 1px solid white;
 		& p {
 			color: white;
@@ -1201,6 +1209,7 @@ h3 {
 		margin-top: toRem(100);
 		height: toRem(200);
 		// border: 1px solid white;
+		cursor: pointer;
 
 		& div {
 			opacity: 0;
@@ -1457,7 +1466,7 @@ h3 {
 	&__slider--body {
 		width: 100%;
 		height: toRem(200);
-		// border: 1px solid white;
+		cursor: pointer;
 
 		& h3 {
 			color: #dcdcdc;
@@ -1616,6 +1625,7 @@ h3 {
 		margin-top: toRem(50);
 	}
 	&__slider--body {
+		cursor: pointer;
 		backdrop-filter: blur(3px); /* Размытие фона */
 
 		& div {
@@ -1727,6 +1737,7 @@ h3 {
 	}
 	&__slider--body {
 		position: relative;
+		cursor: pointer;
 		background-color: #3c597e68;
 
 		& div {
