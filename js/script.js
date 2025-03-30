@@ -101,9 +101,9 @@ volumeControl.addEventListener('input', function () {
 	audio.volume = volumeControl.value;
 });
 
-// ------------------------------------------------------------------------------------------------------------
+// ---------------------------------------   мозайка   ---------------------------------------------------------------------
 
-const mozaikButton = document.querySelector(".all__planet button");
+const mozaikButton = document.querySelector(".all");
 
 const upFigure = document.querySelector(".up__figure");
 const rightFigure = document.querySelector(".right__figure");
@@ -134,7 +134,26 @@ document.addEventListener("click", () => {
 })
 
 
+// ====================================   оси планет  ===================================================
 
+const rollbox = document.querySelector(".roll__box");
+const rollbtn = document.querySelector(".roll");
+const close = document.querySelector(".roll__box img");
+const video = document.getElementById('myVideo');
+
+rollbtn.addEventListener("click", (event) => {
+	rollbox.style.top = "0";
+	document.body.style.overflow = 'hidden';
+	event.stopPropagation();
+})
+
+close.addEventListener("click", () => {
+	rollbox.style.top = "-100vw";
+	document.body.style.overflow = "auto";  // Восстанавливаем прокрутку
+	video.currentTime = 0;
+})
+
+// =================================================================================================
 
 
 // -------------------------------------  slider  solar -----------------------------------------

@@ -541,6 +541,20 @@ h3 {
   color: #f7e789;
 }
 
+.all__planet {
+  margin-top: 3.125rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .all__planet h2 {
   color: white;
   font-size: 2.5rem;
@@ -560,6 +574,41 @@ h3 {
   -webkit-transform: scale(1.02);
       -ms-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.roll__box {
+  position: relative;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -100vw;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.16);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); /* Размытие фона */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 50000;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+.roll__box video {
+  width: 70%;
+}
+.roll__box img {
+  position: absolute;
+  top: 3.125rem;
+  right: 3.125rem;
+  width: 3.125rem;
+  cursor: pointer;
 }
 
 .up__figure {
@@ -2649,4 +2698,18 @@ svg {
             transform: scale(1) rotate(0);
     left: 90%;
   }
+}
+
+.wave {
+  -webkit-animation: none;
+          animation: none;
+  width: 100%;
+  border: 1px solid white;
+}
+
+#mySvg {
+  -webkit-animation: none;
+          animation: none;
+  width: 100%;
+  border: 1px solid white;
 }
